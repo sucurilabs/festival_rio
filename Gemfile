@@ -7,6 +7,17 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 
+group :development, :test do
+  gem "rspec-rails"
+end
+
+group :test do
+  gem "cucumber-rails"
+  gem "factory_girl_rails"
+  gem "database_cleaner"
+  gem "capybara"
+  gem 'remarkable_activerecord'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
