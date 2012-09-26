@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926173333) do
+ActiveRecord::Schema.define(:version => 20120926175610) do
 
   create_table "actors", :force => true do |t|
     t.integer  "country_id"
@@ -68,14 +68,13 @@ ActiveRecord::Schema.define(:version => 20120926173333) do
   end
 
   create_table "join_movies", :force => true do |t|
-    t.integer  "movie_id"
     t.integer  "user_id"
     t.integer  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "movie_session_id"
   end
 
-  add_index "join_movies", ["movie_id"], :name => "index_join_movies_on_movie_id"
   add_index "join_movies", ["user_id"], :name => "index_join_movies_on_user_id"
 
   create_table "localizations", :force => true do |t|
