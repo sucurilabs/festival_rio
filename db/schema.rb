@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926175610) do
+ActiveRecord::Schema.define(:version => 20120926200849) do
 
   create_table "actors", :force => true do |t|
     t.integer  "country_id"
@@ -143,8 +143,13 @@ ActiveRecord::Schema.define(:version => 20120926175610) do
     t.integer  "neighborhood_id"
     t.string   "address"
     t.integer  "number"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+    t.decimal  "price",              :precision => 10, :scale => 0
+    t.decimal  "half_price",         :precision => 10, :scale => 0
+    t.integer  "stocking"
+    t.string   "address_complement"
+    t.string   "name"
   end
 
   add_index "theaters", ["neighborhood_id"], :name => "index_theaters_on_neighborhood_id"
