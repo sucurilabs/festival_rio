@@ -23,8 +23,8 @@ Theater.create(:name => "Odeon Petrobras", :stocking => 563, :price => 18.00, :h
 
 localization = Localization.create(:name => "Zona Sul")
 neighborhood = Neighborhood.create(:name => "Botafogo", :localization => localization)
-Theater.create(:name => "Estação SESC Botafogo 1", :stocking => 239, :price => 16.00, :half_price => 8.00, :address => "Rua Voluntários da Pátria", :number => 88, :neighborhood => neighborhood)
-Theater.create(:name => "Estação SESC Botafogo 3", :stocking => 66, :price => 16.00, :half_price => 8.00, :address => "Rua Voluntários da Pátria", :number => 88, :neighborhood => neighborhood)
+Theater.create(:name => "Est SESC Botafogo 1", :stocking => 239, :price => 16.00, :half_price => 8.00, :address => "Rua Voluntários da Pátria", :number => 88, :neighborhood => neighborhood)
+Theater.create(:name => "Est SESC Botafogo 3", :stocking => 66, :price => 16.00, :half_price => 8.00, :address => "Rua Voluntários da Pátria", :number => 88, :neighborhood => neighborhood)
 
 Theater.create(:name => "Cinemark Botafogo 3", :stocking => 219, :price => 18.00, :half_price => 9.00, :address => "Praia de Botafogo - Botafogo Pria Shopping", :number => 400, :neighborhood => neighborhood)
 
@@ -52,7 +52,7 @@ Theater.create(:name => "Cinépolis Lagoon 5", :stocking => 161, :price => 10.00
 neighborhood = Neighborhood.create(:name => "Ipanema", :localization => localization)
 Theater.create(:name => "OI Futuro em Ipanema", :stocking => 130, :price => 10.00, :half_price => 5.00, :address => "Rua Visconde de Pirajá", :number => 54, :neighborhood => neighborhood)
 
-Theater.create(:name => "Est SESC Ipanema", :stocking => 130, :price => 16.00, :half_price => 8.00, :address => "Rua Visconde de Pirajá", :number => 605, :neighborhood => neighborhood)
+Theater.create(:name => "Est SESC Ipanema 1", :stocking => 130, :price => 16.00, :half_price => 8.00, :address => "Rua Visconde de Pirajá", :number => 605, :neighborhood => neighborhood)
 
 neighborhood = Neighborhood.create(:name => "Copacabana", :localization => localization)
 Theater.create(:name => "Praia de Copacabana", :stocking => 0, :price => 0.00, :half_price => 0.00, :address => "Av. Atlântica", :number => 1702, :address_complement => "Em frente ao Copacabana Palace", :neighborhood => neighborhood)
@@ -68,7 +68,7 @@ Theater.create(:name => "Cine Santa", :stocking => 46, :price => 18.00, :half_pr
 
 localization = Localization.create(:name => "Zona Norte")
 neighborhood = Neighborhood.create(:name => "Complexo do Alemão", :localization => localization)
-Theater.create(:name => "Cinecarioca Nova Brasilia", :stocking => 89, :price => 4.00, :half_price => 2.00, :address => "Rua Nova Brasília, Pça do Terço", :neighborhood => neighborhood)
+Theater.create(:name => "Cine Carioca", :stocking => 89, :price => 4.00, :half_price => 2.00, :address => "Rua Nova Brasília, Pça do Terço", :neighborhood => neighborhood)
 
 neighborhood = Neighborhood.create(:name => "Penha", :localization => localization)
 Theater.create(:name => "Cine TelaBrasil", :stocking => 225, :price => 0.00, :half_price => 0.00, :address => "Rua Santa Engracia, Praça Santa Emiliana", :neighborhood => neighborhood)

@@ -8,5 +8,21 @@ class Movie < ActiveRecord::Base
   has_and_belongs_to_many :genres
   belongs_to :director
   belongs_to :category
-  attr_accessible :imdb_url, :name, :synopsis, :year
+  attr_accessible :imdb_url, :name, :synopsis, :year, :actors, :imdb_data
+
+  def imdb
+    ActiveSupport::JSON.decode(self.imdb_data)
+  end
+
+  def urlized_name
+    self.name.parameterize.gsub("-", "+")
+  end
+
+  def plot
+    self.imdb['Plot']
+  end
+
+  def poster_url
+    self.imdb['Poster'] 
+  end
 end

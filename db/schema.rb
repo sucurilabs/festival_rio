@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926200849) do
+ActiveRecord::Schema.define(:version => 20120927002251) do
 
   create_table "actors", :force => true do |t|
     t.integer  "country_id"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(:version => 20120926200849) do
   end
 
   add_index "actors", ["country_id"], :name => "index_actors_on_country_id"
+
+  create_table "actors_movies", :id => false, :force => true do |t|
+    t.integer "movie_id"
+    t.integer "actor_id"
+  end
 
   create_table "awards", :force => true do |t|
     t.integer  "movie_id"
@@ -67,6 +72,11 @@ ActiveRecord::Schema.define(:version => 20120926200849) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "genres_movies", :id => false, :force => true do |t|
+    t.integer "movie_id"
+    t.integer "genre_id"
+  end
+
   create_table "join_movies", :force => true do |t|
     t.integer  "user_id"
     t.integer  "status"
@@ -105,15 +115,13 @@ ActiveRecord::Schema.define(:version => 20120926200849) do
     t.string   "imdb_url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "imdb_data"
+    t.integer  "imdb_votes"
+    t.float    "imdb_rating"
   end
 
   add_index "movies", ["category_id"], :name => "index_movies_on_category_id"
   add_index "movies", ["director_id"], :name => "index_movies_on_director_id"
-
-  create_table "movies_actors", :id => false, :force => true do |t|
-    t.integer "movie_id"
-    t.integer "actor_id"
-  end
 
   create_table "movies_contries", :id => false, :force => true do |t|
     t.integer "movie_id"
@@ -123,11 +131,6 @@ ActiveRecord::Schema.define(:version => 20120926200849) do
   create_table "movies_festivals", :id => false, :force => true do |t|
     t.integer "movie_id"
     t.integer "festival_id"
-  end
-
-  create_table "movies_genres", :id => false, :force => true do |t|
-    t.integer "movie_id"
-    t.integer "genre_id"
   end
 
   create_table "neighborhoods", :force => true do |t|
