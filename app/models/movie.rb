@@ -11,7 +11,11 @@ class Movie < ActiveRecord::Base
   attr_accessible :imdb_url, :name, :synopsis, :year, :actors, :imdb_data
 
   def imdb
-    ActiveSupport::JSON.decode(self.imdb_data)
+    begin
+      ActiveSupport::JSON.decode(self.imdb_data)
+    rescue
+      {}
+    end
   end
 
   def urlized_name

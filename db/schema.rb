@@ -130,6 +130,11 @@ ActiveRecord::Schema.define(:version => 20120927051320) do
   add_index "movies", ["category_id"], :name => "index_movies_on_category_id"
   add_index "movies", ["director_id"], :name => "index_movies_on_director_id"
 
+  create_table "movies_contries", :id => false, :force => true do |t|
+    t.integer "movie_id"
+    t.integer "contry_id"
+  end
+
   create_table "movies_festivals", :id => false, :force => true do |t|
     t.integer "movie_id"
     t.integer "festival_id"
