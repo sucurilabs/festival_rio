@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'mechanize'
 group :development, :test do
   gem "rspec-rails"
+  gem "pry"
 end
 
 group :test do

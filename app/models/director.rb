@@ -1,5 +1,5 @@
 class Director < ActiveRecord::Base
   belongs_to :country
   has_many :movies
-  attr_accessible :imdb_url, :name
+  attr_accessible :imdb_url, :name, :bio
 end

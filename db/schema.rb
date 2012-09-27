@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927002251) do
+ActiveRecord::Schema.define(:version => 20120927051320) do
 
   create_table "actors", :force => true do |t|
     t.integer  "country_id"
@@ -50,12 +50,18 @@ ActiveRecord::Schema.define(:version => 20120927002251) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "countries_movies", :id => false, :force => true do |t|
+    t.integer "movie_id"
+    t.integer "country_id"
+  end
+
   create_table "directors", :force => true do |t|
     t.integer  "country_id"
     t.string   "name"
     t.string   "imdb_url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "bio"
   end
 
   add_index "directors", ["country_id"], :name => "index_directors_on_country_id"
@@ -118,15 +124,11 @@ ActiveRecord::Schema.define(:version => 20120927002251) do
     t.text     "imdb_data"
     t.integer  "imdb_votes"
     t.float    "imdb_rating"
+    t.integer  "duration"
   end
 
   add_index "movies", ["category_id"], :name => "index_movies_on_category_id"
   add_index "movies", ["director_id"], :name => "index_movies_on_director_id"
-
-  create_table "movies_contries", :id => false, :force => true do |t|
-    t.integer "movie_id"
-    t.integer "contry_id"
-  end
 
   create_table "movies_festivals", :id => false, :force => true do |t|
     t.integer "movie_id"

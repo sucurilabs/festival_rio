@@ -18,11 +18,4 @@ class Movie < ActiveRecord::Base
     self.name.parameterize.gsub("-", "+")
   end
 
-  def plot
-    self.imdb['Plot']
-  end
-
-  def poster_url
-    self.imdb['Poster'] 
-  end
 end
