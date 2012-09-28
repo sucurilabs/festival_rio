@@ -1,4 +1,5 @@
 RoteiroCultural::Application.routes.draw do
+  resources :movie_sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
